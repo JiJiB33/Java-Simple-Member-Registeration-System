@@ -1,0 +1,179 @@
+START
+	PRINT "Enter Your Name : "
+	Get ath_name as user input
+	
+	PRINT "Enter Your Age : "
+	Get a number as age
+	
+	PRINT "Enter your weight in kg : "
+	Get a number as kg
+
+	PRINT "Choose Training Plan (Beginner / Intermediate / Elite) : "
+	Get a number as trn_pl
+
+	Set bg="Beginner"
+	Set im="Intermediate"
+	Set el="Elite"
+
+		IF ( trn_pl is im    OR   trn_pl is el ),			
+			
+			Then PRINT "Choose Competition weight category : "
+			Get a number as wctg
+		
+			PRINT "Number of competitions entered this month : "
+			Get a number as cnum			
+
+		
+		
+
+           WHILE (res=true)
+
+                 PRINT "Add numbers of hour for private coaching week : "
+ 		     Get a number as pt 
+
+	     IF (pt<0) ,
+
+                 Then PRINT"Invalid Hour" 
+
+ 	     ELSE IF (pt>5) , 
+
+	    	    Then PRINT"Sorry! You get only maximum 5 hours" 
+
+ 	     ELSE 
+		    res=false
+
+		
+
+
+	===================================Output Section======================================
+		 
+	PRINT "Athlete’s name : " + ath_name
+	PRINT "Athlete's age : " + age
+
+	Set pt_total = 0
+	pt_total = (pt * 10.50) * 4
+	PRINT "Private tution fee per month : " + pt_total
+
+	Set totalcom = 0 
+	totalcom = cnum * 25	
+	
+
+	Set allcost_1, allcost_2, allcost_3 = 0
+	Set trntotal_1 , trntotal_2 , trntotal_3 = 0
+
+
+	IF (trn_pl is bg) ,
+		
+		trntotal_1 = 20 * 4
+		allcost_1 = trntotal_1 + pt_total
+
+		Then PRINT "Itemized list of all cost per month : " + allcost_1 (to 2 decimal place)
+		PRINT "Total cost of training for a month : " + trntotal_1 (to 2 decimal place)
+	
+
+
+	ELSE IF (trn_pl is im)
+
+		trntotal_2 = 35 * 4
+		allcost_2 = trntotal_2 + pt_total + totalcom
+
+		Then PRINT "Itemized list of all cost per month : " + allcost_2 (to 2 decimal place)		
+		PRINT "Total cost of training for a month : " + trntotal_2 (to 2 decimal place)
+		PRINT "Total cost of competitions : " + totalcom
+	
+
+
+	ELSE 
+		
+		trntotal_3 = 50 * 4
+		allcost_3 = trntotal_3 + pt_total + totalcom
+		
+		Then PRINT "Itemized list of all cost per month : " + allcost_3 (to 2 decimal place)
+		PRINT "Total cost of training for a month : " + trntotal_3	(to 2 decimal place)	
+		PRINT "Total cost of competitions : " + totalcom (to 2 decimal place)
+	
+
+	
+
+ 
+	PRINT "Your current weight compares to competition : "
+	
+	IF (kg<=0) ,
+
+		Then PRINT "Invalid Weight"
+
+	
+
+
+	ELSE IF (kg>0 AND kg<=66) ,
+		
+		Then PRINT "Fly Weight"
+
+	
+
+
+	ELSE IF (kg>66 AND kg<=73) ,
+		
+		Then PRINT "Light Weight"
+
+	
+
+	
+	ELSE IF (kg>73 AND kg<=81) ,
+		
+		Then PRINT "Light Middle Weight"
+
+	
+
+
+	ELSE IF (kg>81 AND kg<=90) ,
+		
+		Then PRINT "Middle Weight"
+
+	
+
+
+	ELSE IF (kg>90 AND kg<=100) ,
+		
+		Then PRINT "Light-Heavy Weight"
+
+	
+
+	ELSE 
+		
+		PRINT "Heavy Weight"
+
+	
+END
+
+=========================================================================================
+
+
+
+
+pt=0
+res=true
+while(res==true)
+
+	PRINT "Add numbers of hour for private coaching week : "
+      Get a number as pt
+
+ 	IF (pt<0) ,
+                	Then PRINT"Invalid Hour"             
+            
+      ELSE IF (pt>5) , 
+              Then PRINT"Sorry! You get only maximum 5 hours"
+
+	ELSE
+		res=false
+
+END
+
+
+
+
+
+
+
+
+
